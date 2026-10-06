@@ -1,0 +1,94 @@
+Étapes:
+
+1) Exclure toutes les adresses déjà utilisées.
+2) Créer un pool (une plage) DHCP
+3) Donner l'adresse réseau
+4) Donner la passerelle par défaut 
+5) Donner l'adresse du serveur DNS
+
+
+Router R-1
+
+ip dhcp excluded-address 172.16.10.1 172.16.10.4
+ip dhcp pool vlan-44
+network 172.16.10.0 255.255.255.128
+default-router 172.16.10.1
+dns-server 172.18.10.2
+exit
+
+
+ip DHCP excluded-address 172.16.11.65 172.16.11.68
+ip DHCP pool vlan-45
+network 172.16.11.64 255.255.255.224
+default-router 172.16.11.5
+Dns-server 172.18.10.2
+exit
+
+
+ip DHCP excluded-address 172.16.11.1 172.16.11.4
+ip DHCP pool vlan-46
+network 172.16.11.0 255.255.255.192
+default-router 172.16.11.1
+Dns-server 172.18.10.2
+exit
+
+
+ip DHCP excluded-address 172.16.10.129 172.16.10.132
+ip DHCP pool vlan-47
+network 172.16.10.128 255.255.255.128
+default-router 172.16.10.129
+Dns-server 172.18.10.2
+exit
+
+
+ip DHCP excluded-address 172.16.11.65 172.16.11.68
+ip DHCP pool vlan-45
+network 172.16.11.64 255.255.255.224
+default-router 172.16.11.5
+Dns-server 172.18.10.2
+exit
+
+
+
+ip DHCP excluded-address 172.16.11.97 172.16.11.100
+ip DHCP pool vlan-50
+network 172.16.11.96 255.255.255.240
+default-router 172.16.11.97
+Dns-server 172.18.10.2
+exit
+
+
+R-3
+
+# rseau invite
+
+
+ip DHCP excluded-address 192.168.10.1
+ip DHCP excluded-address 192.168.10.254
+ip DHCP excluded-address 192.168.10.2
+
+ip DHCP pool S6
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+Dns-server 172.18.10.2
+exit
+
+
+R-4
+
+# datacenter
+
+ip DHCP excluded-address 172.18.10.1 172.18.10.3
+ip DHCP excluded-address 172.18.10.6
+ip DHCP pool S4
+network 172.18.10.0 255.255.255.248
+default-router 172.18.10.1
+Dns-server 172.18.10.2
+exit
+
+
+
+
+
+
+
