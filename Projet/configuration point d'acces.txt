@@ -1,0 +1,11 @@
+1) Avoir un ordinateur admin pour configurer
+2) Connecter Laptop Admin à l'Access point avec un cable Ethernet sur un des ports Ethernet de l'AP
+3)Mettre la carte réseau du Laptop Admin sur DHCP, l'adresse de la passerelle est celle du point d'accès
+4) Ouvrir le navigateur du Laptop Admin et saisir cette adresse
+5) Username = admin
+   mot de pass = Admin
+
+
+
+- Désactiver le DHCP server pour recevoir et partager le gateway du R-3 
+- Configurer le wifi ( security mode: WPA2 et le pass: banksecure)
