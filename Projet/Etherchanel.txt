@@ -1,0 +1,36 @@
+port vert = la connexion passe
+Orange = ne passe pas (panne)
+rouge = hors connexion
+
+s1:
+interface range F0/3-4
+channel-group 3 mode desirable
+exit
+
+interface range F0/1-2
+channel-group 1 mode desirable
+exit
+
+s2:
+interface range F0/4-5
+channel-group 3 mode desirable
+exit
+
+interface range F0/2-3
+channel-group 2 mode desirable
+exit
+
+
+s3:
+interface range F0/1-2
+channel-group 2 mode desirable
+exit
+
+interface range F0/3-4
+channel-group 1 mode desirable
+exit
+
+
+
+pour voir: show etherchannel summary
+pour annuler : no channel-group
