@@ -1,0 +1,46 @@
+- choix de l'id de processus ospf (1-65535)
+	choix = 10
+
+*** config ospf Routeur-local-1 ****
+
+enable
+  config terminal
+    router ospf 11
+      router-id 1.1.1.1
+      
+      Network 10.10.1.0 0.0.0.3	area 0
+      Network 10.10.2.0 0.0.0.3 area 0
+      Network 10.10.3.0 0.0.0.3 area 0
+      Network 10.10.4.0 0.0.0.3 area 0
+      
+      Network 172.16.10.0 0.0.0.127 area 0
+      Network 172.16.11.64 0.0.0.31 area 0
+      Network 172.16.11.0 0.0.0.63 area 0 
+      Network 172.16.10.128 0.0.0.127 area 0 	
+
+*** config ospf Routeur-local-2 ****
+
+enable
+  config terminal
+    router ospf 11
+      router-id 2.2.2.2
+      
+      Network 10.10.3.0 0.0.0.3	area 0
+      Network 10.10.4.0 0.0.0.3 area 0
+      Network 10.10.5.0 0.0.0.3 area 0
+      Network 10.10.6.0 0.0.0.3 area 0
+      Network 172.17.10.0 0.0.0.7 area 0
+     
+
+
+*** config ospf Routeur-local-4 ****
+
+enable
+  config terminal
+    router ospf 11
+      router-id 4.4.4.4
+      
+      Network 172.17.10.0 0.0.0.7 area 0
+      Network 172.18.10.0 0.0.0.7 area 0
+     
+		

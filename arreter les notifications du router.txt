@@ -1,0 +1,4 @@
+undebug all
+
+conf t
+no logging console
