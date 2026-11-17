@@ -42,5 +42,17 @@ enable
       
       Network 172.17.10.0 0.0.0.7 area 0
       Network 172.18.10.0 0.0.0.7 area 0
+
+
+*** config ospf Routeur central ****
+
+enable
+  config terminal
+    router ospf 11
+      router-id 4.4.4.4
+      
+      Network 172.17.10.0 0.0.0.7 area 0
+      Network 172.18.10.0 0.0.0.7 area 0
+
      
 		

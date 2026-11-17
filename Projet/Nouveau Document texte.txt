@@ -1,0 +1,47 @@
+###------------creation vlan
+
+Switch(config)# vlan 10
+Switch(config-vlan)# name ADMIN
+
+Switch(config)# vlan 20
+Switch(config-vlan)# name RH
+
+####------------affectation de port
+
+**---------acces
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+
+
+
+
+###---------trunk
+interface g0/1
+ switchport mode trunk
+
+
+
+
+
+show interfaces trunk
+show vlan brief
+
+
+
+##----------------routage inter vlan
+
+
+interface g0/0
+ no shutdown
+
+
+interface g0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+
+
+interface g0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+
